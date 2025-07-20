@@ -1,4 +1,3 @@
-#awajelek
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -48,11 +47,49 @@
         
         .machine-card {
             transition: all 0.3s ease;
+            width: 88px;
+            height: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
         }
         
         .machine-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .machine-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 88px);
+            gap: 12px;
+            justify-content: flex-start;
+        }
+        
+        @media (max-width: 1400px) {
+            .machine-grid {
+                grid-template-columns: repeat(8, 88px);
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .machine-grid {
+                grid-template-columns: repeat(6, 88px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .machine-grid {
+                grid-template-columns: repeat(4, 88px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .machine-grid {
+                grid-template-columns: repeat(2, 88px);
+            }
         }
         
         .status-running {
@@ -83,6 +120,27 @@
             border: 1px solid #E5E7EB;
             border-radius: 8px;
             background: white;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .area-label {
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            width: 60px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 8px;
+            border-right: 2px solid #dee2e6;
+        }
+        
+        .area-content {
+            flex: 1;
+            padding: 16px;
         }
         
         .table-container {
@@ -121,528 +179,530 @@
                 <h1 class="text-2xl font-bold text-gray-800 mb-4">Status Mesin Real-time</h1>
                 
                 <!-- Area A -->
-                <div class="area-container p-4">
-                    <div class="flex items-center mb-4">
+                <div class="area-container">
+                    <div class="area-label">
                         <h2 class="text-xl font-bold text-gray-700">AREA A</h2>
                     </div>
-                    <div class="grid grid-cols-10 gap-3 mb-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-01</div>
-                            <div class="text-lg font-bold">98%</div>
+                    <div class="area-content">
+                        <div class="machine-grid">
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-01</div>
+                            <div class="text-sm font-bold leading-tight">98%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-02</div>
-                            <div class="text-lg font-bold">85%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-02</div>
+                            <div class="text-sm font-bold leading-tight">85%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-03</div>
-                            <div class="text-lg font-bold">95%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-03</div>
+                            <div class="text-sm font-bold leading-tight">95%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-04</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-04</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-05</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-05</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-06</div>
-                            <div class="text-lg font-bold">92%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-06</div>
+                            <div class="text-sm font-bold leading-tight">92%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-07</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-07</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-08</div>
-                            <div class="text-lg font-bold">94%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-08</div>
+                            <div class="text-sm font-bold leading-tight">94%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-09</div>
-                            <div class="text-lg font-bold">75%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-09</div>
+                            <div class="text-sm font-bold leading-tight">75%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-10</div>
-                            <div class="text-lg font-bold">96%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-10</div>
+                            <div class="text-sm font-bold leading-tight">96%</div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-7 gap-3">
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-11</div>
-                            <div class="text-lg font-bold">82%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-11</div>
+                            <div class="text-sm font-bold leading-tight">82%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-12</div>
-                            <div class="text-lg font-bold">94%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-12</div>
+                            <div class="text-sm font-bold leading-tight">94%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-13</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-13</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-14</div>
-                            <div class="text-lg font-bold">91%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-14</div>
+                            <div class="text-sm font-bold leading-tight">91%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-15</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-15</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-16</div>
-                            <div class="text-lg font-bold">88%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-16</div>
+                            <div class="text-sm font-bold leading-tight">88%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A-17</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A-17</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
+                        </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Area A+ -->
-                <div class="area-container p-4">
-                    <div class="flex items-center mb-4">
+                <div class="area-container">
+                    <div class="area-label">
                         <h2 class="text-xl font-bold text-gray-700">AREA A+</h2>
                     </div>
-                    <div class="grid grid-cols-10 gap-3 mb-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-01</div>
-                            <div class="text-lg font-bold">96%</div>
+                    <div class="area-content">
+                        <div class="machine-grid">
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-01</div>
+                            <div class="text-sm font-bold leading-tight">96%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-02</div>
-                            <div class="text-lg font-bold">85%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-02</div>
+                            <div class="text-sm font-bold leading-tight">85%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-03</div>
-                            <div class="text-lg font-bold">95%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-03</div>
+                            <div class="text-sm font-bold leading-tight">95%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-04</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-04</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-05</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-05</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-06</div>
-                            <div class="text-lg font-bold">92%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-06</div>
+                            <div class="text-sm font-bold leading-tight">92%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-07</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-07</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-08</div>
-                            <div class="text-lg font-bold">99%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-08</div>
+                            <div class="text-sm font-bold leading-tight">99%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-09</div>
-                            <div class="text-lg font-bold">75%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-09</div>
+                            <div class="text-sm font-bold leading-tight">75%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-10</div>
-                            <div class="text-lg font-bold">96%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-10</div>
+                            <div class="text-sm font-bold leading-tight">96%</div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-10 gap-3">
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-11</div>
-                            <div class="text-lg font-bold">82%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-11</div>
+                            <div class="text-sm font-bold leading-tight">82%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-12</div>
-                            <div class="text-lg font-bold">94%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-12</div>
+                            <div class="text-sm font-bold leading-tight">94%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-13</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-13</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-14</div>
-                            <div class="text-lg font-bold">91%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-14</div>
+                            <div class="text-sm font-bold leading-tight">91%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-15</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-15</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-16</div>
-                            <div class="text-lg font-bold">88%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-16</div>
+                            <div class="text-sm font-bold leading-tight">88%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-17</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-17</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-18</div>
-                            <div class="text-lg font-bold">93%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-18</div>
+                            <div class="text-sm font-bold leading-tight">93%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-19</div>
-                            <div class="text-lg font-bold">78%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-19</div>
+                            <div class="text-sm font-bold leading-tight">78%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">A+-20</div>
-                            <div class="text-lg font-bold">97%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">A+-20</div>
+                            <div class="text-sm font-bold leading-tight">97%</div>
+                        </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Area B -->
-                <div class="area-container p-4">
-                    <div class="flex items-center mb-4">
+                <div class="area-container">
+                    <div class="area-label">
                         <h2 class="text-xl font-bold text-gray-700">AREA B</h2>
                     </div>
-                    <div class="grid grid-cols-10 gap-3 mb-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-01</div>
-                            <div class="text-lg font-bold">96%</div>
+                    <div class="area-content">
+                        <div class="machine-grid">
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-01</div>
+                            <div class="text-sm font-bold leading-tight">96%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-02</div>
-                            <div class="text-lg font-bold">81%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-02</div>
+                            <div class="text-sm font-bold leading-tight">81%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-03</div>
-                            <div class="text-lg font-bold">93%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-03</div>
+                            <div class="text-sm font-bold leading-tight">93%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-04</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-04</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-05</div>
-                            <div class="text-lg font-bold">88%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-05</div>
+                            <div class="text-sm font-bold leading-tight">88%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-06</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-06</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-07</div>
-                            <div class="text-lg font-bold">91%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-07</div>
+                            <div class="text-sm font-bold leading-tight">91%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-08</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-08</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-09</div>
-                            <div class="text-lg font-bold">94%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-09</div>
+                            <div class="text-sm font-bold leading-tight">94%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-10</div>
-                            <div class="text-lg font-bold">74%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-10</div>
+                            <div class="text-sm font-bold leading-tight">74%</div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-5 gap-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-11</div>
-                            <div class="text-lg font-bold">87%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-11</div>
+                            <div class="text-sm font-bold leading-tight">87%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-12</div>
-                            <div class="text-lg font-bold">79%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-12</div>
+                            <div class="text-sm font-bold leading-tight">79%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-13</div>
-                            <div class="text-lg font-bold">90%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-13</div>
+                            <div class="text-sm font-bold leading-tight">90%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-14</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-14</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">B-15</div>
-                            <div class="text-lg font-bold">85%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">B-15</div>
+                            <div class="text-sm font-bold leading-tight">85%</div>
+                        </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Area C -->
-                <div class="area-container p-4">
-                    <div class="flex items-center mb-4">
+                <div class="area-container">
+                    <div class="area-label">
                         <h2 class="text-xl font-bold text-gray-700">AREA C</h2>
                     </div>
-                    <div class="grid grid-cols-10 gap-3 mb-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-01</div>
-                            <div class="text-lg font-bold">95%</div>
+                    <div class="area-content">
+                        <div class="machine-grid">
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-01</div>
+                            <div class="text-sm font-bold leading-tight">95%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-02</div>
-                            <div class="text-lg font-bold">92%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-02</div>
+                            <div class="text-sm font-bold leading-tight">92%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-03</div>
-                            <div class="text-lg font-bold">83%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-03</div>
+                            <div class="text-sm font-bold leading-tight">83%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-04</div>
-                            <div class="text-lg font-bold">89%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-04</div>
+                            <div class="text-sm font-bold leading-tight">89%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-05</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-05</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-06</div>
-                            <div class="text-lg font-bold">91%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-06</div>
+                            <div class="text-sm font-bold leading-tight">91%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-07</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-07</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-08</div>
-                            <div class="text-lg font-bold">86%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-08</div>
+                            <div class="text-sm font-bold leading-tight">86%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-09</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-09</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-10</div>
-                            <div class="text-lg font-bold">93%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-10</div>
+                            <div class="text-sm font-bold leading-tight">93%</div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-9 gap-3">
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-11</div>
-                            <div class="text-lg font-bold">77%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-11</div>
+                            <div class="text-sm font-bold leading-tight">77%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-12</div>
-                            <div class="text-lg font-bold">89%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-12</div>
+                            <div class="text-sm font-bold leading-tight">89%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-13</div>
-                            <div class="text-lg font-bold">82%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-13</div>
+                            <div class="text-sm font-bold leading-tight">82%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-14</div>
-                            <div class="text-lg font-bold">90%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-14</div>
+                            <div class="text-sm font-bold leading-tight">90%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-15</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-15</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-16</div>
-                            <div class="text-lg font-bold">94%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-16</div>
+                            <div class="text-sm font-bold leading-tight">94%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-17</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-17</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-18</div>
-                            <div class="text-lg font-bold">87%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-18</div>
+                            <div class="text-sm font-bold leading-tight">87%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">C-19</div>
-                            <div class="text-lg font-bold">75%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">C-19</div>
+                            <div class="text-sm font-bold leading-tight">75%</div>
+                        </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Area D -->
-                <div class="area-container p-4">
-                    <div class="flex items-center mb-4">
+                <div class="area-container">
+                    <div class="area-label">
                         <h2 class="text-xl font-bold text-gray-700">AREA D</h2>
                     </div>
-                    <div class="grid grid-cols-10 gap-3 mb-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-01</div>
-                            <div class="text-lg font-bold">97%</div>
+                    <div class="area-content">
+                        <div class="machine-grid">
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-01</div>
+                            <div class="text-sm font-bold leading-tight">97%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-02</div>
-                            <div class="text-lg font-bold">84%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-02</div>
+                            <div class="text-sm font-bold leading-tight">84%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-03</div>
-                            <div class="text-lg font-bold">91%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-03</div>
+                            <div class="text-sm font-bold leading-tight">91%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-04</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-04</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-05</div>
-                            <div class="text-lg font-bold">89%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-05</div>
+                            <div class="text-sm font-bold leading-tight">89%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-06</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-06</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-07</div>
-                            <div class="text-lg font-bold">93%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-07</div>
+                            <div class="text-sm font-bold leading-tight">93%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-08</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-08</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-09</div>
-                            <div class="text-lg font-bold">86%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-09</div>
+                            <div class="text-sm font-bold leading-tight">86%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-10</div>
-                            <div class="text-lg font-bold">78%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-10</div>
+                            <div class="text-sm font-bold leading-tight">78%</div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-8 gap-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-11</div>
-                            <div class="text-lg font-bold">92%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-11</div>
+                            <div class="text-sm font-bold leading-tight">92%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-12</div>
-                            <div class="text-lg font-bold">81%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-12</div>
+                            <div class="text-sm font-bold leading-tight">81%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-13</div>
-                            <div class="text-lg font-bold">88%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-13</div>
+                            <div class="text-sm font-bold leading-tight">88%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-14</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-14</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-15</div>
-                            <div class="text-lg font-bold">90%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-15</div>
+                            <div class="text-sm font-bold leading-tight">90%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-16</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-16</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-17</div>
-                            <div class="text-lg font-bold">85%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-17</div>
+                            <div class="text-sm font-bold leading-tight">85%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">D-18</div>
-                            <div class="text-lg font-bold">73%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">D-18</div>
+                            <div class="text-sm font-bold leading-tight">73%</div>
+                        </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Area E -->
-                <div class="area-container p-4">
-                    <div class="flex items-center mb-4">
+                <div class="area-container">
+                    <div class="area-label">
                         <h2 class="text-xl font-bold text-gray-700">AREA E</h2>
                     </div>
-                    <div class="grid grid-cols-9 gap-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-01</div>
-                            <div class="text-lg font-bold">94%</div>
+                    <div class="area-content">
+                        <div class="machine-grid">
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-01</div>
+                            <div class="text-sm font-bold leading-tight">94%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-02</div>
-                            <div class="text-lg font-bold">89%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-02</div>
+                            <div class="text-sm font-bold leading-tight">89%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-03</div>
-                            <div class="text-lg font-bold">87%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-03</div>
+                            <div class="text-sm font-bold leading-tight">87%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-04</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-04</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-05</div>
-                            <div class="text-lg font-bold">91%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-05</div>
+                            <div class="text-sm font-bold leading-tight">91%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-06</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-06</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-07</div>
-                            <div class="text-lg font-bold">89%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-07</div>
+                            <div class="text-sm font-bold leading-tight">89%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-08</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-08</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">E-09</div>
-                            <div class="text-lg font-bold">93%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">E-09</div>
+                            <div class="text-sm font-bold leading-tight">93%</div>
+                        </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Area F -->
-                <div class="area-container p-4">
-                    <div class="flex items-center mb-4">
+                <div class="area-container">
+                    <div class="area-label">
                         <h2 class="text-xl font-bold text-gray-700">AREA F</h2>
                     </div>
-                    <div class="grid grid-cols-10 gap-3 mb-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-01</div>
-                            <div class="text-lg font-bold">96%</div>
+                    <div class="area-content">
+                        <div class="machine-grid">
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-01</div>
+                            <div class="text-sm font-bold leading-tight">96%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-02</div>
-                            <div class="text-lg font-bold">82%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-02</div>
+                            <div class="text-sm font-bold leading-tight">82%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-03</div>
-                            <div class="text-lg font-bold">90%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-03</div>
+                            <div class="text-sm font-bold leading-tight">90%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-04</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-04</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-05</div>
-                            <div class="text-lg font-bold">88%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-05</div>
+                            <div class="text-sm font-bold leading-tight">88%</div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-06</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-06</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-07</div>
-                            <div class="text-lg font-bold">92%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-07</div>
+                            <div class="text-sm font-bold leading-tight">92%</div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-08</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-08</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-09</div>
-                            <div class="text-lg font-bold">85%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-09</div>
+                            <div class="text-sm font-bold leading-tight">85%</div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-10</div>
-                            <div class="text-lg font-bold">76%</div>
+                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-10</div>
+                            <div class="text-sm font-bold leading-tight">76%</div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-5 gap-3">
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-11</div>
-                            <div class="text-lg font-bold">89%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-11</div>
+                            <div class="text-sm font-bold leading-tight">89%</div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-12</div>
-                            <div class="text-lg font-bold">83%</div>
+                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-12</div>
+                            <div class="text-sm font-bold leading-tight">83%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-13</div>
-                            <div class="text-lg font-bold">91%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-13</div>
+                            <div class="text-sm font-bold leading-tight">91%</div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-14</div>
-                            <div class="text-lg font-bold">0%</div>
+                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-14</div>
+                            <div class="text-sm font-bold leading-tight">0%</div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-3 text-center shadow-md">
-                            <div class="text-sm font-semibold">F-15</div>
-                            <div class="text-lg font-bold">87%</div>
+                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
+                            <div class="text-xs font-semibold leading-tight">F-15</div>
+                            <div class="text-sm font-bold leading-tight">87%</div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -653,75 +713,29 @@
                 <!-- Realtime Linestop -->
                 <div class="bg-white rounded-lg shadow-sm border p-4">
                     <h3 class="text-lg font-bold text-gray-800 mb-4">Realtime Linestop</h3>
-                    <div class="table-container">
-                        <table class="w-full text-sm">
+                    <div class="table-container overflow-x-auto md:overflow-x-visible">
+                        <table class="w-full text-xs min-w-full" id="linestop-table">
                             <thead class="bg-gray-50 sticky top-0">
                                 <tr>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">No</th>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">Mesin</th>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">Part/Mold</th>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">Problem</th>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">PIC</th>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">Mulai</th>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">Repair</th>
-                                    <th class="px-3 py-2 text-left font-semibold text-gray-700">Durasi</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">No</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Mesin</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700">Part/Mold</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700">Problem</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">PIC</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Mulai</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Repair</th>
+                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Durasi</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr class="border-b hover:bg-gray-50">
-                                    <td class="px-3 py-3">1</td>
-                                    <td class="px-3 py-3 font-semibold">A24</td>
-                                    <td class="px-3 py-3">DOOR STORAGE</td>
-                                    <td class="px-3 py-3">Part Scrap Gelding</td>
-                                    <td class="px-3 py-3">MOLD SHOP</td>
-                                    <td class="px-3 py-3">06:17</td>
-                                    <td class="px-3 py-3">TEAM BRAVO</td>
-                                    <td class="px-3 py-3 text-red-600 font-semibold">131k menit</td>
-                                </tr>
-                                <tr class="border-b hover:bg-gray-50">
-                                    <td class="px-3 py-3">2</td>
-                                    <td class="px-3 py-3 font-semibold">E09</td>
-                                    <td class="px-3 py-3">COVER STORAGE</td>
-                                    <td class="px-3 py-3">Hydraulic Pressure Drop</td>
-                                    <td class="px-3 py-3">MAINTENANCE</td>
-                                    <td class="px-3 py-3">06:45</td>
-                                    <td class="px-3 py-3">TEAM ALPHA</td>
-                                    <td class="px-3 py-3 text-red-600 font-semibold">82 menit</td>
-                                </tr>
-                                <tr class="border-b hover:bg-gray-50">
-                                    <td class="px-3 py-3">3</td>
-                                    <td class="px-3 py-3 font-semibold">C07</td>
-                                    <td class="px-3 py-3">HOUSING MOTOR</td>
-                                    <td class="px-3 py-3">Mold Crack Detected</td>
-                                    <td class="px-3 py-3">MOLD SHOP</td>
-                                    <td class="px-3 py-3">11:30</td>
-                                    <td class="px-3 py-3">TEAM CHARLIE</td>
-                                    <td class="px-3 py-3 text-red-600 font-semibold">100 menit</td>
-                                </tr>
-                                <tr class="border-b hover:bg-gray-50">
-                                    <td class="px-3 py-3">4</td>
-                                    <td class="px-3 py-3 font-semibold">D06</td>
-                                    <td class="px-3 py-3">BRACKET SET</td>
-                                    <td class="px-3 py-3">Material Shortage</td>
-                                    <td class="px-3 py-3">PRODUKSI</td>
-                                    <td class="px-3 py-3">06:30</td>
-                                    <td class="px-3 py-3">TEAM DELTA</td>
-                                    <td class="px-3 py-3 text-red-600 font-semibold">90 menit</td>
-                                </tr>
-                                <tr class="border-b hover:bg-gray-50">
-                                    <td class="px-3 py-3">5</td>
-                                    <td class="px-3 py-3 font-semibold">B06</td>
-                                    <td class="px-3 py-3">PANEL COVER</td>
-                                    <td class="px-3 py-3">Temperature Control</td>
-                                    <td class="px-3 py-3">MAINTENANCE</td>
-                                    <td class="px-3 py-3">07:15</td>
-                                    <td class="px-3 py-3">TEAM ECHO</td>
-                                    <td class="px-3 py-3 text-red-600 font-semibold">65 menit</td>
-                                </tr>
+                            <tbody id="linestop-tbody">
+                                <!-- Data will be populated by JavaScript -->
                             </tbody>
                         </table>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2">Exists 1 of 2</div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="text-xs text-gray-500" id="batch-info">Batch 1 of 3</div>
+                        
+                    </div>
                 </div>
 
                 <!-- Current Shift Count -->
@@ -857,6 +871,104 @@
             }
 
             setInterval(updateDurations, 60000);
+        });
+    </script>
+
+    <script id="linestop-batch">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data dummy untuk tabel Realtime Linestop (15 baris)
+            const linestopData = [
+                {no: 1, mesin: 'A24', part: 'DOOR STORAGE', problem: 'Part Scrap Gelding', pic: 'MOLD SHOP', mulai: '06:17', repair: 'TEAM BRAVO', durasi: '131k menit'},
+                {no: 2, mesin: 'E09', part: 'COVER STORAGE', problem: 'Hydraulic Pressure Drop', pic: 'MAINTENANCE', mulai: '06:45', repair: 'TEAM ALPHA', durasi: '82 menit'},
+                {no: 3, mesin: 'C07', part: 'HOUSING MOTOR', problem: 'Mold Crack Detected', pic: 'MOLD SHOP', mulai: '11:30', repair: 'TEAM CHARLIE', durasi: '100 menit'},
+                {no: 4, mesin: 'D06', part: 'BRACKET SET', problem: 'Material Shortage', pic: 'PRODUKSI', mulai: '06:30', repair: 'TEAM DELTA', durasi: '90 menit'},
+                {no: 5, mesin: 'B06', part: 'PANEL COVER', problem: 'Temperature Control', pic: 'MAINTENANCE', mulai: '07:15', repair: 'TEAM ECHO', durasi: '65 menit'},
+                {no: 6, mesin: 'F12', part: 'WINDOW FRAME', problem: 'Injection Pressure Low', pic: 'MAINTENANCE', mulai: '08:22', repair: 'TEAM FOXTROT', durasi: '45 menit'},
+                {no: 7, mesin: 'A18', part: 'SIDE PANEL', problem: 'Cooling System Error', pic: 'PRODUKSI', mulai: '09:10', repair: 'TEAM GOLF', durasi: '38 menit'},
+                {no: 8, mesin: 'C15', part: 'REAR BUMPER', problem: 'Material Contamination', pic: 'QUALITY', mulai: '10:05', repair: 'TEAM HOTEL', durasi: '72 menit'},
+                {no: 9, mesin: 'B21', part: 'DASHBOARD', problem: 'Heater Band Failure', pic: 'MAINTENANCE', mulai: '11:45', repair: 'TEAM INDIA', durasi: '55 menit'},
+                {no: 10, mesin: 'D14', part: 'GRILLE ASSY', problem: 'Screw Loose Detected', pic: 'MOLD SHOP', mulai: '12:30', repair: 'TEAM JULIET', durasi: '28 menit'},
+                {no: 11, mesin: 'E07', part: 'HOOD LATCH', problem: 'Electrical Short Circuit', pic: 'MAINTENANCE', mulai: '13:15', repair: 'TEAM KILO', durasi: '93 menit'},
+                {no: 12, mesin: 'F05', part: 'MIRROR BASE', problem: 'Robot Arm Malfunction', pic: 'AUTOMATION', mulai: '14:20', repair: 'TEAM LIMA', durasi: '67 menit'},
+                {no: 13, mesin: 'A09', part: 'TRIM PANEL', problem: 'Vacuum Leak', pic: 'PRODUKSI', mulai: '15:08', repair: 'TEAM MIKE', durasi: '41 menit'},
+                {no: 14, mesin: 'C22', part: 'SEAT FRAME', problem: 'Mold Temperature High', pic: 'QUALITY', mulai: '16:45', repair: 'TEAM NOVEMBER', durasi: '59 menit'},
+                {no: 15, mesin: 'B18', part: 'CONSOLE BOX', problem: 'Air Pressure Drop', pic: 'MAINTENANCE', mulai: '17:30', repair: 'TEAM OSCAR', durasi: '33 menit'}
+            ];
+
+            const tbody = document.getElementById('linestop-tbody');
+            const batchInfo = document.getElementById('batch-info');
+            const batchSize = 5; // Jumlah data per batch
+            const totalBatches = Math.ceil(linestopData.length / batchSize);
+            let currentBatch = 0;
+
+            // Fungsi untuk membuat baris tabel
+            function createTableRow(data) {
+                return `
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-2 py-2 whitespace-nowrap">${data.no}</td>
+                        <td class="px-2 py-2 font-semibold whitespace-nowrap">${data.mesin}</td>
+                        <td class="px-2 py-2">${data.part}</td>
+                        <td class="px-2 py-2">${data.problem}</td>
+                        <td class="px-2 py-2 whitespace-nowrap">${data.pic}</td>
+                        <td class="px-2 py-2 whitespace-nowrap">${data.mulai}</td>
+                        <td class="px-2 py-2 whitespace-nowrap">${data.repair}</td>
+                        <td class="px-2 py-2 text-red-600 font-semibold whitespace-nowrap">${data.durasi}</td>
+                    </tr>
+                `;
+            }
+
+            // Fungsi untuk menampilkan batch data
+            function displayBatch(batchIndex) {
+                const startIndex = batchIndex * batchSize;
+                const endIndex = Math.min(startIndex + batchSize, linestopData.length);
+                const batchData = linestopData.slice(startIndex, endIndex);
+                
+                // Kosongkan tbody dan isi dengan data batch
+                tbody.innerHTML = '';
+                batchData.forEach(data => {
+                    tbody.innerHTML += createTableRow(data);
+                });
+
+                // Update informasi batch
+                batchInfo.textContent = `Batch ${batchIndex + 1} of ${totalBatches}`;
+            }
+
+            // Fungsi untuk berpindah ke batch berikutnya
+            function nextBatch() {
+                currentBatch = (currentBatch + 1) % totalBatches;
+                displayBatch(currentBatch);
+            }
+
+            // Inisialisasi: tampilkan batch pertama
+            displayBatch(currentBatch);
+
+            // Set interval untuk berpindah batch setiap 5 detik
+            setInterval(nextBatch, 5000);
+
+            // Update durasi setiap menit (hanya untuk data yang sedang ditampilkan)
+            function updateVisibleDurations() {
+                const durationCells = tbody.querySelectorAll('tr td:last-child');
+                durationCells.forEach((cell, index) => {
+                    if (cell.textContent.includes('menit')) {
+                        const currentMinutes = parseInt(cell.textContent);
+                        const newMinutes = currentMinutes + 1;
+                        if (cell.textContent.includes('k')) {
+                            cell.textContent = Math.floor(newMinutes / 1000) + 'k menit';
+                        } else {
+                            cell.textContent = newMinutes + ' menit';
+                        }
+                        
+                        // Update data di array juga
+                        const dataIndex = (currentBatch * batchSize) + index;
+                        if (dataIndex < linestopData.length) {
+                            linestopData[dataIndex].durasi = cell.textContent;
+                        }
+                    }
+                });
+            }
+
+            // Update durasi setiap menit
+            setInterval(updateVisibleDurations, 60000);
         });
     </script>
 </body>
