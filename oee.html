@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Pemantauan Mesin Produksi Real-time</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -61,10 +61,226 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
+        .machine-card-green {
+            width: 88px;
+            height: 45px;
+            background: linear-gradient(180deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+            border: 1px solid #15803d;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .machine-card-green::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .machine-card-green:hover {
+            background: linear-gradient(180deg, #22d55f 0%, #16a34a 50%, #15803d 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Machine Card Standby - Yellow 3D */
+        .machine-card-standby {
+            width: 88px;
+            height: 45px;
+            background: linear-gradient(180deg, #fde047 0%, #facc15 50%, #eab308 100%);
+            border: 1px solid #ca8a04;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .machine-card-standby::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .machine-card-standby:hover {
+            background: linear-gradient(180deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Machine Card Linestop - Red 3D */
+        .machine-card-linestop {
+            width: 88px;
+            height: 45px;
+            background: linear-gradient(180deg, #f87171 0%, #ef4444 50%, #dc2626 100%);
+            border: 1px solid #b91c1c;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .machine-card-linestop::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .machine-card-linestop:hover {
+            background: linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Machine Card Maintenance - Orange 3D */
+        .machine-card-maintenance {
+            width: 88px;
+            height: 45px;
+            background: linear-gradient(180deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+            border: 1px solid #c2410c;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .machine-card-maintenance::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .machine-card-maintenance:hover {
+            background: linear-gradient(180deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Machine Card Trial - Blue 3D */
+        .machine-card-trial {
+            width: 88px;
+            height: 45px;
+            background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+            border: 1px solid #1d4ed8;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .machine-card-trial::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .machine-card-trial:hover {
+            background: linear-gradient(180deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Machine Card Off - Gray 3D */
+        .machine-card-off {
+            width: 88px;
+            height: 45px;
+            background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
+            border: 1px solid #9ca3af;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+            color: #4b5563;
+        }
+        
+        .machine-card-off::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .machine-card-off:hover {
+            background: linear-gradient(180deg, #e5e7eb 0%, #d1d5db 50%, #9ca3af 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
         .machine-grid {
             display: grid;
             grid-template-columns: repeat(10, 88px);
-            gap: 12px;
+            gap: 8px;
             justify-content: flex-start;
         }
         
@@ -122,14 +338,14 @@
             background: white;
             display: flex;
             align-items: flex-start;
-            gap: 16px;
+            gap: 12px;
         }
         
         .area-label {
             writing-mode: vertical-lr;
             text-orientation: mixed;
-            width: 60px;
-            min-height: 120px;
+            width: 50px;
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,9 +354,52 @@
             border-right: 2px solid #dee2e6;
         }
         
+        /* Area Label Colors */
+        .area-label-a {
+            background: linear-gradient(135deg, #fef2f2, #fecaca);
+            border-right: 2px solid #f87171;
+            color: #991b1b;
+        }
+        
+        .area-label-a-plus {
+            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+            border-right: 2px solid #fb923c;
+            color: #c2410c;
+        }
+        
+        .area-label-b {
+            background: linear-gradient(135deg, #fefce8, #fef3c7);
+            border-right: 2px solid #facc15;
+            color: #a16207;
+        }
+        
+        .area-label-c {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-right: 2px solid #4ade80;
+            color: #166534;
+        }
+        
+        .area-label-d {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-right: 2px solid #60a5fa;
+            color: #1d4ed8;
+        }
+        
+        .area-label-e {
+            background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+            border-right: 2px solid #f472b6;
+            color: #be185d;
+        }
+        
+        .area-label-f {
+            background: linear-gradient(135deg, #faf5ff, #e9d5ff);
+            border-right: 2px solid #a855f7;
+            color: #6b21a8;
+        }
+        
         .area-content {
             flex: 1;
-            padding: 16px;
+            padding: 8px;
         }
         
         .table-container {
@@ -169,89 +428,338 @@
         .count-card:hover {
             transform: scale(1.02);
         }
+        
+        .count-card-green {
+            background: linear-gradient(180deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+            border: 1px solid #15803d;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .count-card-green::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .count-card-green:hover {
+            background: linear-gradient(180deg, #22d55f 0%, #16a34a 50%, #15803d 100%);
+            transform: scale(1.02);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Count Card Yellow 3D */
+        .count-card-yellow {
+            background: linear-gradient(180deg, #fde047 0%, #facc15 50%, #eab308 100%);
+            border: 1px solid #ca8a04;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .count-card-yellow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .count-card-yellow:hover {
+            background: linear-gradient(180deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
+            transform: scale(1.02);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Count Card Gray 3D */
+        .count-card-gray {
+            background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
+            border: 1px solid #9ca3af;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            color: #4b5563;
+        }
+        
+        .count-card-gray::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .count-card-gray:hover {
+            background: linear-gradient(180deg, #e5e7eb 0%, #d1d5db 50%, #9ca3af 100%);
+            transform: scale(1.02);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Count Card Red 3D */
+        .count-card-red {
+            background: linear-gradient(180deg, #f87171 0%, #ef4444 50%, #dc2626 100%);
+            border: 1px solid #b91c1c;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .count-card-red::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .count-card-red:hover {
+            background: linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+            transform: scale(1.02);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Count Card Orange 3D */
+        .count-card-orange {
+            background: linear-gradient(180deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+            border: 1px solid #c2410c;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .count-card-orange::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .count-card-orange:hover {
+            background: linear-gradient(180deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+            transform: scale(1.02);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Count Card Blue 3D */
+        .count-card-blue {
+            background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+            border: 1px solid #1d4ed8;
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -1px 1px rgba(0,0,0,0.2),
+                0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .count-card-blue::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 7px 7px 0 0;
+            pointer-events: none;
+        }
+        
+        .count-card-blue:hover {
+            background: linear-gradient(180deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+            transform: scale(1.02);
+            box-shadow: 
+                inset 0 1px 2px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(0,0,0,0.3),
+                0 4px 12px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-inter">
     <div class="min-h-screen p-6">
         <div class="grid grid-cols-12 gap-6 h-screen">
             <!-- Area Status Mesin (Kolom Kiri) -->
-            <div class="col-span-8 space-y-4 overflow-y-auto">
-                <h1 class="text-2xl font-bold text-gray-800 mb-4">Status Mesin Real-time</h1>
+            <div class="col-span-8 space-y-2 overflow-y-auto">
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">Status Mesin Real-time</h1>
                 
                 <!-- Area A -->
                 <div class="area-container">
-                    <div class="area-label">
-                        <h2 class="text-xl font-bold text-gray-700">AREA A</h2>
+                    <div class="area-label area-label-a">
+                        <h2 class="text-base font-bold text-center">AREA A</h2>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-01</div>
-                            <div class="text-sm font-bold leading-tight">98%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A01</div>
+                                <div class="text-sm font-bold">98%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-02</div>
-                            <div class="text-sm font-bold leading-tight">85%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A02</div>
+                                <div class="text-sm font-bold">85%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-03</div>
-                            <div class="text-sm font-bold leading-tight">95%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A03</div>
+                                <div class="text-sm font-bold">95%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-04</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A04</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-05</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A05</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-06</div>
-                            <div class="text-sm font-bold leading-tight">92%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A06</div>
+                                <div class="text-sm font-bold">92%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-07</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A07</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-08</div>
-                            <div class="text-sm font-bold leading-tight">94%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A08</div>
+                                <div class="text-sm font-bold">94%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-09</div>
-                            <div class="text-sm font-bold leading-tight">75%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A09</div>
+                                <div class="text-sm font-bold">75%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-10</div>
-                            <div class="text-sm font-bold leading-tight">96%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A10</div>
+                                <div class="text-sm font-bold">96%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-11</div>
-                            <div class="text-sm font-bold leading-tight">82%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A11</div>
+                                <div class="text-sm font-bold">82%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-12</div>
-                            <div class="text-sm font-bold leading-tight">94%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A12</div>
+                                <div class="text-sm font-bold">94%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-13</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A13</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-14</div>
-                            <div class="text-sm font-bold leading-tight">91%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A14</div>
+                                <div class="text-sm font-bold">91%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-15</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A15</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-16</div>
-                            <div class="text-sm font-bold leading-tight">88%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A16</div>
+                                <div class="text-sm font-bold">88%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A-17</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A17</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -259,90 +767,150 @@
 
                 <!-- Area A+ -->
                 <div class="area-container">
-                    <div class="area-label">
-                        <h2 class="text-xl font-bold text-gray-700">AREA A+</h2>
+                    <div class="area-label area-label-a-plus">
+                        <h2 class="text-base font-bold text-center">AREA A+</h2>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-01</div>
-                            <div class="text-sm font-bold leading-tight">96%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A18</div>
+                                <div class="text-sm font-bold">96%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-02</div>
-                            <div class="text-sm font-bold leading-tight">85%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A19</div>
+                                <div class="text-sm font-bold">85%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-03</div>
-                            <div class="text-sm font-bold leading-tight">95%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A20</div>
+                                <div class="text-sm font-bold">95%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-04</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A21</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-05</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A22</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-06</div>
-                            <div class="text-sm font-bold leading-tight">92%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A23</div>
+                                <div class="text-sm font-bold">92%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-07</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A24</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-08</div>
-                            <div class="text-sm font-bold leading-tight">99%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A25</div>
+                                <div class="text-sm font-bold">99%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-09</div>
-                            <div class="text-sm font-bold leading-tight">75%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A26</div>
+                                <div class="text-sm font-bold">75%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-10</div>
-                            <div class="text-sm font-bold leading-tight">96%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A27</div>
+                                <div class="text-sm font-bold">96%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-11</div>
-                            <div class="text-sm font-bold leading-tight">82%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A28</div>
+                                <div class="text-sm font-bold">82%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-12</div>
-                            <div class="text-sm font-bold leading-tight">94%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A29</div>
+                                <div class="text-sm font-bold">94%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-13</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A30</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-14</div>
-                            <div class="text-sm font-bold leading-tight">91%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A31</div>
+                                <div class="text-sm font-bold">91%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-15</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A32</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-16</div>
-                            <div class="text-sm font-bold leading-tight">88%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A33</div>
+                                <div class="text-sm font-bold">88%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-17</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A34</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-18</div>
-                            <div class="text-sm font-bold leading-tight">93%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A35</div>
+                                <div class="text-sm font-bold">93%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-19</div>
-                            <div class="text-sm font-bold leading-tight">78%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A36</div>
+                                <div class="text-sm font-bold">78%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">A+-20</div>
-                            <div class="text-sm font-bold leading-tight">97%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">A37</div>
+                                <div class="text-sm font-bold">97%</div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -350,70 +918,115 @@
 
                 <!-- Area B -->
                 <div class="area-container">
-                    <div class="area-label">
-                        <h2 class="text-xl font-bold text-gray-700">AREA B</h2>
+                    <div class="area-label area-label-b">
+                        <h2 class="text-base font-bold text-center">AREA B</h2>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-01</div>
-                            <div class="text-sm font-bold leading-tight">96%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B01</div>
+                                <div class="text-sm font-bold">96%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-02</div>
-                            <div class="text-sm font-bold leading-tight">81%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B02</div>
+                                <div class="text-sm font-bold">81%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-03</div>
-                            <div class="text-sm font-bold leading-tight">93%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B03</div>
+                                <div class="text-sm font-bold">93%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-04</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B04</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-05</div>
-                            <div class="text-sm font-bold leading-tight">88%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B05</div>
+                                <div class="text-sm font-bold">88%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-06</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B06</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-07</div>
-                            <div class="text-sm font-bold leading-tight">91%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B07</div>
+                                <div class="text-sm font-bold">91%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-08</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B08</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-09</div>
-                            <div class="text-sm font-bold leading-tight">94%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B09</div>
+                                <div class="text-sm font-bold">94%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-10</div>
-                            <div class="text-sm font-bold leading-tight">74%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B10</div>
+                                <div class="text-sm font-bold">74%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-11</div>
-                            <div class="text-sm font-bold leading-tight">87%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B11</div>
+                                <div class="text-sm font-bold">87%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-12</div>
-                            <div class="text-sm font-bold leading-tight">79%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B12</div>
+                                <div class="text-sm font-bold">79%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-13</div>
-                            <div class="text-sm font-bold leading-tight">90%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B13</div>
+                                <div class="text-sm font-bold">90%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-14</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B14</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">B-15</div>
-                            <div class="text-sm font-bold leading-tight">85%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">B15</div>
+                                <div class="text-sm font-bold">85%</div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -421,86 +1034,143 @@
 
                 <!-- Area C -->
                 <div class="area-container">
-                    <div class="area-label">
-                        <h2 class="text-xl font-bold text-gray-700">AREA C</h2>
+                    <div class="area-label area-label-c">
+                        <h2 class="text-base font-bold text-center">AREA C</h2>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-01</div>
-                            <div class="text-sm font-bold leading-tight">95%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C01</div>
+                                <div class="text-sm font-bold">95%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-02</div>
-                            <div class="text-sm font-bold leading-tight">92%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C02</div>
+                                <div class="text-sm font-bold">92%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-03</div>
-                            <div class="text-sm font-bold leading-tight">83%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C03</div>
+                                <div class="text-sm font-bold">83%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-04</div>
-                            <div class="text-sm font-bold leading-tight">89%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C04</div>
+                                <div class="text-sm font-bold">89%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-05</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C05</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-06</div>
-                            <div class="text-sm font-bold leading-tight">91%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C06</div>
+                                <div class="text-sm font-bold">91%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-07</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C07</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-08</div>
-                            <div class="text-sm font-bold leading-tight">86%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C08</div>
+                                <div class="text-sm font-bold">86%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-09</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C09</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-10</div>
-                            <div class="text-sm font-bold leading-tight">93%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C10</div>
+                                <div class="text-sm font-bold">93%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-11</div>
-                            <div class="text-sm font-bold leading-tight">77%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C11</div>
+                                <div class="text-sm font-bold">77%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-12</div>
-                            <div class="text-sm font-bold leading-tight">89%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C12</div>
+                                <div class="text-sm font-bold">89%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-13</div>
-                            <div class="text-sm font-bold leading-tight">82%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C13</div>
+                                <div class="text-sm font-bold">82%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-14</div>
-                            <div class="text-sm font-bold leading-tight">90%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C14</div>
+                                <div class="text-sm font-bold">90%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-15</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C15</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-16</div>
-                            <div class="text-sm font-bold leading-tight">94%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C16</div>
+                                <div class="text-sm font-bold">94%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-17</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C17</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-18</div>
-                            <div class="text-sm font-bold leading-tight">87%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C18</div>
+                                <div class="text-sm font-bold">87%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">C-19</div>
-                            <div class="text-sm font-bold leading-tight">75%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">C19</div>
+                                <div class="text-sm font-bold">75%</div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -508,82 +1178,136 @@
 
                 <!-- Area D -->
                 <div class="area-container">
-                    <div class="area-label">
-                        <h2 class="text-xl font-bold text-gray-700">AREA D</h2>
+                    <div class="area-label area-label-d">
+                        <h2 class="text-base font-bold text-center">AREA D</h2>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-01</div>
-                            <div class="text-sm font-bold leading-tight">97%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D01</div>
+                                <div class="text-sm font-bold">97%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-02</div>
-                            <div class="text-sm font-bold leading-tight">84%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D02</div>
+                                <div class="text-sm font-bold">84%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-03</div>
-                            <div class="text-sm font-bold leading-tight">91%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D03</div>
+                                <div class="text-sm font-bold">91%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-04</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D04</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-05</div>
-                            <div class="text-sm font-bold leading-tight">89%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D05</div>
+                                <div class="text-sm font-bold">89%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-06</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D06</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-07</div>
-                            <div class="text-sm font-bold leading-tight">93%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D07</div>
+                                <div class="text-sm font-bold">93%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-08</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D08</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-09</div>
-                            <div class="text-sm font-bold leading-tight">86%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D09</div>
+                                <div class="text-sm font-bold">86%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-10</div>
-                            <div class="text-sm font-bold leading-tight">78%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D10</div>
+                                <div class="text-sm font-bold">78%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-11</div>
-                            <div class="text-sm font-bold leading-tight">92%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D11</div>
+                                <div class="text-sm font-bold">92%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-12</div>
-                            <div class="text-sm font-bold leading-tight">81%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D12</div>
+                                <div class="text-sm font-bold">81%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-13</div>
-                            <div class="text-sm font-bold leading-tight">88%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D13</div>
+                                <div class="text-sm font-bold">88%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-14</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D14</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-15</div>
-                            <div class="text-sm font-bold leading-tight">90%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D15</div>
+                                <div class="text-sm font-bold">90%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-16</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D16</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-17</div>
-                            <div class="text-sm font-bold leading-tight">85%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D17</div>
+                                <div class="text-sm font-bold">85%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">D-18</div>
-                            <div class="text-sm font-bold leading-tight">73%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">D18</div>
+                                <div class="text-sm font-bold">73%</div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -591,46 +1315,73 @@
 
                 <!-- Area E -->
                 <div class="area-container">
-                    <div class="area-label">
-                        <h2 class="text-xl font-bold text-gray-700">AREA E</h2>
+                    <div class="area-label area-label-e">
+                        <h2 class="text-base font-bold text-center">AREA E</h2>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-01</div>
-                            <div class="text-sm font-bold leading-tight">94%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E01</div>
+                                <div class="text-sm font-bold">94%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-02</div>
-                            <div class="text-sm font-bold leading-tight">89%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E02</div>
+                                <div class="text-sm font-bold">89%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-03</div>
-                            <div class="text-sm font-bold leading-tight">87%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E03</div>
+                                <div class="text-sm font-bold">87%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-04</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E04</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-05</div>
-                            <div class="text-sm font-bold leading-tight">91%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E05</div>
+                                <div class="text-sm font-bold">91%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-06</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E06</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-07</div>
-                            <div class="text-sm font-bold leading-tight">89%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E07</div>
+                                <div class="text-sm font-bold">89%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-08</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E08</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">E-09</div>
-                            <div class="text-sm font-bold leading-tight">93%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">E09</div>
+                                <div class="text-sm font-bold">93%</div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -638,70 +1389,115 @@
 
                 <!-- Area F -->
                 <div class="area-container">
-                    <div class="area-label">
-                        <h2 class="text-xl font-bold text-gray-700">AREA F</h2>
+                    <div class="area-label area-label-f">
+                        <h2 class="text-base font-bold text-center">AREA F</h2>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-01</div>
-                            <div class="text-sm font-bold leading-tight">96%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F01</div>
+                                <div class="text-sm font-bold">96%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-02</div>
-                            <div class="text-sm font-bold leading-tight">82%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F02</div>
+                                <div class="text-sm font-bold">82%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-03</div>
-                            <div class="text-sm font-bold leading-tight">90%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F03</div>
+                                <div class="text-sm font-bold">90%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-04</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F04</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-05</div>
-                            <div class="text-sm font-bold leading-tight">88%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F05</div>
+                                <div class="text-sm font-bold">88%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-linestop text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-06</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F06</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-07</div>
-                            <div class="text-sm font-bold leading-tight">92%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F07</div>
+                                <div class="text-sm font-bold">92%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-maintenance text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-08</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F08</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-09</div>
-                            <div class="text-sm font-bold leading-tight">85%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F09</div>
+                                <div class="text-sm font-bold">85%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-trial text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-10</div>
-                            <div class="text-sm font-bold leading-tight">76%</div>
+                        <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F10</div>
+                                <div class="text-sm font-bold">76%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-11</div>
-                            <div class="text-sm font-bold leading-tight">89%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F11</div>
+                                <div class="text-sm font-bold">89%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-standby text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-12</div>
-                            <div class="text-sm font-bold leading-tight">83%</div>
+                        <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F12</div>
+                                <div class="text-sm font-bold">83%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-13</div>
-                            <div class="text-sm font-bold leading-tight">91%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F13</div>
+                                <div class="text-sm font-bold">91%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-off text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-14</div>
-                            <div class="text-sm font-bold leading-tight">0%</div>
+                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F14</div>
+                                <div class="text-sm font-bold">0%</div>
+                            </div>
                         </div>
-                        <div class="machine-card status-running text-white rounded-lg p-2 text-center shadow-md">
-                            <div class="text-xs font-semibold leading-tight">F-15</div>
-                            <div class="text-sm font-bold leading-tight">87%</div>
+                        <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-lg shadow-sm cursor-pointer">
+                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <div class="flex-1 text-left">
+                                <div class="text-[10px] font-medium">F15</div>
+                                <div class="text-sm font-bold">87%</div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -711,20 +1507,20 @@
             <!-- Panel Informasi Kanan -->
             <div class="col-span-4 space-y-4">
                 <!-- Realtime Linestop -->
-                <div class="bg-white rounded-lg shadow-sm border p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Realtime Linestop</h3>
+                <div class="bg-white rounded-lg shadow-sm border p-3">
+                    <h3 class="text-base font-bold text-gray-800 mb-3">Realtime Linestop</h3>
                     <div class="table-container overflow-x-auto md:overflow-x-visible">
-                        <table class="w-full text-xs min-w-full" id="linestop-table">
+                        <table class="w-full text-[10px] min-w-full" id="linestop-table">
                             <thead class="bg-gray-50 sticky top-0">
                                 <tr>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">No</th>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Mesin</th>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700">Part/Mold</th>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700">Problem</th>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">PIC</th>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Mulai</th>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Repair</th>
-                                    <th class="px-2 py-2 text-left font-semibold text-gray-700 whitespace-nowrap">Durasi</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700 whitespace-nowrap w-8">No</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700 whitespace-nowrap w-12">Mesin</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700 w-20">Part</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700">Problem</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700 whitespace-nowrap w-16">PIC</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700 whitespace-nowrap w-12">Mulai</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700 whitespace-nowrap w-16">Repair</th>
+                                    <th class="px-1 py-1 text-left font-semibold text-gray-700 whitespace-nowrap w-16">Durasi</th>
                                 </tr>
                             </thead>
                             <tbody id="linestop-tbody">
@@ -739,62 +1535,62 @@
                 </div>
 
                 <!-- Current Shift Count -->
-                <div class="bg-white rounded-lg shadow-sm border p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Current Shift Count</h3>
-                    <div class="grid grid-cols-4 gap-3">
-                        <div class="count-card text-center p-3 bg-gray-100 rounded-lg">
-                            <div class="text-2xl font-bold text-gray-700">0</div>
+                <div class="bg-white rounded-lg shadow-sm border p-3">
+                    <h3 class="text-base font-bold text-gray-800 mb-3">Current Shift Count</h3>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="count-card text-center p-2.5 bg-yellow-100 rounded-lg">
+                            <div class="text-xl font-bold text-gray-800">0</div>
                             <div class="text-xs text-gray-600">Planned Machine</div>
                         </div>
-                        <div class="count-card text-center p-3 bg-green-100 rounded-lg">
-                            <div class="text-2xl font-bold text-green-600">79</div>
-                            <div class="text-xs text-green-600">Running Machine</div>
+                        <div class="count-card text-center p-2.5 bg-green-100 rounded-lg">
+                            <div class="text-xl font-bold text-gray-800">79</div>
+                            <div class="text-xs text-gray-600">Running Machine</div>
                         </div>
-                        <div class="count-card text-center p-3 bg-red-100 rounded-lg">
-                            <div class="text-2xl font-bold text-red-600">5</div>
-                            <div class="text-xs text-red-600">Not Running Yet</div>
+                        <div class="count-card text-center p-2.5 bg-red-100 rounded-lg">
+                            <div class="text-xl font-bold text-gray-800">5</div>
+                            <div class="text-xs text-gray-600">Not Running Yet</div>
                         </div>
-                        <div class="count-card text-center p-3 bg-blue-100 rounded-lg">
-                            <div class="text-2xl font-bold text-blue-600">2</div>
-                            <div class="text-xs text-blue-600">Running w/o Plan</div>
+                        <div class="count-card text-center p-2.5 bg-blue-100 rounded-lg">
+                            <div class="text-xl font-bold text-gray-800">2</div>
+                            <div class="text-xs text-gray-600">Running w/o Plan</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Realtime Count -->
-                <div class="bg-white rounded-lg shadow-sm border p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Realtime Count</h3>
-                    <div class="grid grid-cols-3 gap-3">
-                        <div class="count-card text-center p-4 bg-green-500 text-white rounded-lg">
-                            <div class="text-3xl font-bold">59</div>
-                            <div class="text-sm">Running Auto</div>
+                <div class="bg-white rounded-lg shadow-sm border p-3">
+                    <h3 class="text-base font-bold text-gray-800 mb-3">Realtime Count</h3>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="count-card count-card-green text-center p-3 text-white rounded-lg">
+                            <div class="text-2xl font-bold">59</div>
+                            <div class="text-xs">Running Auto</div>
                         </div>
-                        <div class="count-card text-center p-4 bg-yellow-500 text-white rounded-lg">
-                            <div class="text-3xl font-bold">7</div>
-                            <div class="text-sm">Standby</div>
+                        <div class="count-card count-card-yellow text-center p-3 text-white rounded-lg">
+                            <div class="text-2xl font-bold">7</div>
+                            <div class="text-xs">Standby</div>
                         </div>
-                        <div class="count-card text-center p-4 bg-gray-500 text-white rounded-lg">
-                            <div class="text-3xl font-bold">20</div>
-                            <div class="text-sm">Off</div>
+                        <div class="count-card count-card-gray text-center p-3 text-gray-700 rounded-lg">
+                            <div class="text-2xl font-bold">20</div>
+                            <div class="text-xs">Off</div>
                         </div>
-                        <div class="count-card text-center p-4 bg-red-500 text-white rounded-lg">
-                            <div class="text-3xl font-bold">11</div>
-                            <div class="text-sm">Linestop</div>
+                        <div class="count-card count-card-red text-center p-3 text-white rounded-lg">
+                            <div class="text-2xl font-bold">11</div>
+                            <div class="text-xs">Linestop</div>
                         </div>
-                        <div class="count-card text-center p-4 bg-orange-500 text-white rounded-lg">
-                            <div class="text-3xl font-bold">9</div>
-                            <div class="text-sm">Maintenance</div>
+                        <div class="count-card count-card-orange text-center p-3 text-white rounded-lg">
+                            <div class="text-2xl font-bold">9</div>
+                            <div class="text-xs">Maintenance</div>
                         </div>
-                        <div class="count-card text-center p-4 bg-blue-500 text-white rounded-lg">
-                            <div class="text-3xl font-bold">6</div>
-                            <div class="text-sm">Trial</div>
+                        <div class="count-card count-card-blue text-center p-3 text-white rounded-lg">
+                            <div class="text-2xl font-bold">6</div>
+                            <div class="text-xs">Trial</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Planning Note -->
-                <div class="bg-white rounded-lg shadow-sm border p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Planning Note</h3>
+                <div class="bg-white rounded-lg shadow-sm border p-3">
+                    <h3 class="text-base font-bold text-gray-800 mb-3">Planning Note</h3>
                     <div class="space-y-2 text-sm">
                         <div class="flex items-start space-x-2">
                             <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -833,7 +1629,7 @@
                 const maintenanceCount = document.querySelectorAll('.status-maintenance').length;
                 const trialCount = document.querySelectorAll('.status-trial').length;
 
-                const countElements = document.querySelectorAll('.count-card .text-3xl');
+                const countElements = document.querySelectorAll('.count-card .text-2xl');
                 if (countElements.length >= 6) {
                     countElements[0].textContent = runningCount;
                     countElements[1].textContent = standbyCount;
@@ -903,16 +1699,21 @@
 
             // Fungsi untuk membuat baris tabel
             function createTableRow(data) {
+                // Potong text jika terlalu panjang untuk menghemat ruang
+                const truncateText = (text, maxLength) => {
+                    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+                };
+                
                 return `
                     <tr class="border-b hover:bg-gray-50">
-                        <td class="px-2 py-2 whitespace-nowrap">${data.no}</td>
-                        <td class="px-2 py-2 font-semibold whitespace-nowrap">${data.mesin}</td>
-                        <td class="px-2 py-2">${data.part}</td>
-                        <td class="px-2 py-2">${data.problem}</td>
-                        <td class="px-2 py-2 whitespace-nowrap">${data.pic}</td>
-                        <td class="px-2 py-2 whitespace-nowrap">${data.mulai}</td>
-                        <td class="px-2 py-2 whitespace-nowrap">${data.repair}</td>
-                        <td class="px-2 py-2 text-red-600 font-semibold whitespace-nowrap">${data.durasi}</td>
+                        <td class="px-1 py-1 whitespace-nowrap text-center">${data.no}</td>
+                        <td class="px-1 py-1 font-semibold whitespace-nowrap">${data.mesin}</td>
+                        <td class="px-1 py-1" title="${data.part}">${truncateText(data.part, 12)}</td>
+                        <td class="px-1 py-1" title="${data.problem}">${truncateText(data.problem, 20)}</td>
+                        <td class="px-1 py-1 whitespace-nowrap text-xs">${data.pic}</td>
+                        <td class="px-1 py-1 whitespace-nowrap text-center">${data.mulai}</td>
+                        <td class="px-1 py-1 whitespace-nowrap text-xs">${data.repair}</td>
+                        <td class="px-1 py-1 text-red-600 font-semibold whitespace-nowrap text-center">${data.durasi}</td>
                     </tr>
                 `;
             }
@@ -973,3 +1774,9 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
