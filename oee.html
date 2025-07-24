@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF8">
@@ -54,6 +54,32 @@
             justify-content: center;
             align-items: center;
             flex-shrink: 0;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            border: none;
+        }
+        
+        /* Consistent font sizing for all machine card types */
+        .machine-card-green .flex-1 div:first-child,
+        .machine-card-standby .flex-1 div:first-child,
+        .machine-card-linestop .flex-1 div:first-child,
+        .machine-card-maintenance .flex-1 div:first-child,
+        .machine-card-trial .flex-1 div:first-child,
+        .machine-card-off .flex-1 div:first-child {
+            font-size: 0.75rem !important; /* 12px - consistent size for machine ID */
+            font-weight: 700 !important; /* Bold for machine ID */
+            line-height: 1.2;
+        }
+        
+        .machine-card-green .flex-1 div:last-child,
+        .machine-card-standby .flex-1 div:last-child,
+        .machine-card-linestop .flex-1 div:last-child,
+        .machine-card-maintenance .flex-1 div:last-child,
+        .machine-card-trial .flex-1 div:last-child,
+        .machine-card-off .flex-1 div:last-child {
+            font-size: 0.75rem !important; /* 12px - consistent size for percentage */
+            font-weight: 500 !important; /* Medium weight for percentage */
+            line-height: 1.2;
         }
         
         .machine-card:hover {
@@ -64,224 +90,152 @@
         .machine-card-green {
             width: 88px;
             height: 45px;
-            background: linear-gradient(180deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
-            border: 1px solid #15803d;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(39, 174, 96, 0.85); /* green with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
+            color: white;
         }
         
         .machine-card-green::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .machine-card-green:hover {
-            background: linear-gradient(180deg, #22d55f 0%, #16a34a 50%, #15803d 100%);
+            background: rgba(39, 174, 96, 0.95);
             transform: translateY(-2px);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Machine Card Standby - Yellow 3D */
+        /* Machine Card Standby - Yellow Modern */
         .machine-card-standby {
             width: 88px;
             height: 45px;
-            background: linear-gradient(180deg, #fde047 0%, #facc15 50%, #eab308 100%);
-            border: 1px solid #ca8a04;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(241, 196, 15, 0.85); /* yellow with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
+            color: white;
         }
         
         .machine-card-standby::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .machine-card-standby:hover {
-            background: linear-gradient(180deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
+            background: rgba(241, 196, 15, 0.95);
             transform: translateY(-2px);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Machine Card Linestop - Red 3D */
+        /* Machine Card Linestop - Red Modern */
         .machine-card-linestop {
             width: 88px;
             height: 45px;
-            background: linear-gradient(180deg, #f87171 0%, #ef4444 50%, #dc2626 100%);
-            border: 1px solid #b91c1c;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(231, 76, 60, 0.85); /* red with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
+            color: white;
         }
         
         .machine-card-linestop::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .machine-card-linestop:hover {
-            background: linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+            background: rgba(231, 76, 60, 0.95);
             transform: translateY(-2px);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Machine Card Maintenance - Orange 3D */
+        /* Machine Card Maintenance - Orange Modern */
         .machine-card-maintenance {
             width: 88px;
             height: 45px;
-            background: linear-gradient(180deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
-            border: 1px solid #c2410c;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(243, 156, 18, 0.85); /* orange with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
+            color: white;
         }
         
         .machine-card-maintenance::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .machine-card-maintenance:hover {
-            background: linear-gradient(180deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+            background: rgba(243, 156, 18, 0.95);
             transform: translateY(-2px);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Machine Card Trial - Blue 3D */
+        /* Machine Card Trial - Teal Modern */
         .machine-card-trial {
             width: 88px;
             height: 45px;
-            background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
-            border: 1px solid #1d4ed8;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(26, 188, 156, 0.85); /* teal with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
+            color: white;
         }
         
         .machine-card-trial::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .machine-card-trial:hover {
-            background: linear-gradient(180deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+            background: rgba(26, 188, 156, 0.95);
             transform: translateY(-2px);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Machine Card Off - Gray 3D */
+        /* Machine Card Off - Gray Modern */
         .machine-card-off {
             width: 88px;
             height: 45px;
-            background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
-            border: 1px solid #9ca3af;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(108, 117, 125, 0.85); /* gray with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
-            color: #4b5563;
+            color: white;
         }
         
         .machine-card-off::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .machine-card-off:hover {
-            background: linear-gradient(180deg, #e5e7eb 0%, #d1d5db 50%, #9ca3af 100%);
+            background: rgba(108, 117, 125, 0.95);
             transform: translateY(-2px);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
         .machine-grid {
             display: grid;
             grid-template-columns: repeat(10, 88px);
-            gap: 8px;
+            gap: 6px;
             justify-content: flex-start;
+            margin: 5px 0; /* Consistent vertical spacing */
         }
         
         @media (max-width: 1400px) {
@@ -333,24 +287,64 @@
         }
         
         .area-container {
-            border: 1px solid #E5E7EB;
-            border-radius: 8px;
-            background: white;
+            /* Remove background, border, border-radius, and padding */
+            border: none;
+            border-radius: 0;
+            background: transparent;
             display: grid;
             grid-template-columns: 80px 1fr;
             align-items: center;
-            gap: 16px;
-            padding: 16px;
+            gap: 12px;
+            /* Balanced padding for centered separator line */
+            padding: 10px 0;
+            margin: 0;
+            /* Add bottom border as separator line */
+            border-bottom: 1px solid #E5E7EB; /* Slightly lighter gray for cleaner look */
+        }
+        
+        /* First area container - no top padding */
+        .area-container:first-of-type {
+            padding-top: 0;
+        }
+        
+        /* Last area container - no bottom border and padding */
+        .area-container:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
         }
         
         .area-label {
-            writing-mode: vertical-lr;
-            text-orientation: mixed;
             width: 80px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100%;
+            text-align: center;
+            /* Remove vertical writing mode for horizontal text */
+            writing-mode: initial;
+            text-orientation: initial;
+        }
+        
+        .area-label h2 {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .area-label .area-text {
+            font-size: 0.75rem; /* 12px - small size for "AREA" */
+            font-weight: 500;
+            color: #6B7280; /* Gray-500 */
+            margin-bottom: 2px;
+            letter-spacing: 0.05em;
+        }
+        
+        .area-label .area-letter {
+            font-size: 1.5rem; /* 24px - larger size for area letter */
+            font-weight: 700;
+            color: #1F2937; /* Gray-800 */
+            line-height: 1;
         }
         
         /* Area Label Colors - Removed backgrounds, keeping text colors */
@@ -384,7 +378,7 @@
         
         .area-content {
             flex: 1;
-            padding: 8px;
+            padding: 0 4px; /* Only horizontal padding */
         }
         
         .table-container {
@@ -415,201 +409,128 @@
         }
         
         .count-card-green {
-            background: linear-gradient(180deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
-            border: 1px solid #15803d;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(39, 174, 96, 0.85); /* green with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             position: relative;
+            color: white;
         }
         
         .count-card-green::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .count-card-green:hover {
-            background: linear-gradient(180deg, #22d55f 0%, #16a34a 50%, #15803d 100%);
-            transform: scale(1.02);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            background: rgba(39, 174, 96, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Count Card Yellow 3D */
+        /* Count Card Yellow Modern */
         .count-card-yellow {
-            background: linear-gradient(180deg, #fde047 0%, #facc15 50%, #eab308 100%);
-            border: 1px solid #ca8a04;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(241, 196, 15, 0.85); /* yellow with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             position: relative;
+            color: white;
         }
         
         .count-card-yellow::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .count-card-yellow:hover {
-            background: linear-gradient(180deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
-            transform: scale(1.02);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            background: rgba(241, 196, 15, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Count Card Gray 3D */
+        /* Count Card Gray Modern */
         .count-card-gray {
-            background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
-            border: 1px solid #9ca3af;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(108, 117, 125, 0.85); /* gray with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             position: relative;
-            color: #4b5563;
+            color: white;
         }
         
         .count-card-gray::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .count-card-gray:hover {
-            background: linear-gradient(180deg, #e5e7eb 0%, #d1d5db 50%, #9ca3af 100%);
-            transform: scale(1.02);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            background: rgba(108, 117, 125, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Count Card Red 3D */
+        /* Count Card Red Modern */
         .count-card-red {
-            background: linear-gradient(180deg, #f87171 0%, #ef4444 50%, #dc2626 100%);
-            border: 1px solid #b91c1c;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(231, 76, 60, 0.85); /* red with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             position: relative;
+            color: white;
         }
         
         .count-card-red::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .count-card-red:hover {
-            background: linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
-            transform: scale(1.02);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            background: rgba(231, 76, 60, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Count Card Orange 3D */
+        /* Count Card Orange Modern */
         .count-card-orange {
-            background: linear-gradient(180deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
-            border: 1px solid #c2410c;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(243, 156, 18, 0.85); /* orange with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             position: relative;
+            color: white;
         }
         
         .count-card-orange::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .count-card-orange:hover {
-            background: linear-gradient(180deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
-            transform: scale(1.02);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            background: rgba(243, 156, 18, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
-        /* Count Card Blue 3D */
+        /* Count Card Blue Modern */
         .count-card-blue {
-            background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
-            border: 1px solid #1d4ed8;
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.4),
-                inset 0 -1px 1px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(26, 188, 156, 0.85); /* teal/blue with transparency */
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             position: relative;
+            color: white;
         }
         
         .count-card-blue::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
-            border-radius: 7px 7px 0 0;
-            pointer-events: none;
+            content: none;
         }
         
         .count-card-blue:hover {
-            background: linear-gradient(180deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
-            transform: scale(1.02);
-            box-shadow: 
-                inset 0 1px 2px rgba(255,255,255,0.5),
-                inset 0 -1px 1px rgba(0,0,0,0.3),
-                0 4px 12px rgba(0,0,0,0.2);
+            background: rgba(26, 188, 156, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
     </style>
 </head>
@@ -621,126 +542,127 @@
                 <h1 class="text-2xl font-bold text-gray-800 mb-2">Status Mesin Real-time</h1>
                 
                 <!-- Area A -->
-                <div class="area-container mb-6">
+                <div class="area-container">
                     <div class="area-label area-label-a">
-                        <h2 class="font-bold text-lg text-center">AREA A</h2>
+                        <div class="area-text">AREA</div>
+                        <div class="area-letter">A</div>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A01</div>
                                 <div class="text-sm font-bold">98%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A02</div>
                                 <div class="text-sm font-bold">85%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A03</div>
                                 <div class="text-sm font-bold">95%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A04</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A05</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A06</div>
                                 <div class="text-sm font-bold">92%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A07</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A08</div>
                                 <div class="text-sm font-bold">94%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A09</div>
                                 <div class="text-sm font-bold">75%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A10</div>
                                 <div class="text-sm font-bold">96%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A11</div>
                                 <div class="text-sm font-bold">82%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A12</div>
                                 <div class="text-sm font-bold">94%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A13</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A14</div>
                                 <div class="text-sm font-bold">91%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A15</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A16</div>
                                 <div class="text-sm font-bold">88%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A17</div>
                                 <div class="text-sm font-bold">0%</div>
@@ -751,147 +673,148 @@
                 </div>
 
                 <!-- Area A+ -->
-                <div class="area-container mb-6">
+                <div class="area-container">
                     <div class="area-label area-label-a-plus">
-                        <h2 class="font-bold text-lg text-center">AREA A+</h2>
+                        <div class="area-text">AREA</div>
+                        <div class="area-letter">A+</div>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A18</div>
                                 <div class="text-sm font-bold">96%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A19</div>
                                 <div class="text-sm font-bold">85%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A20</div>
                                 <div class="text-sm font-bold">95%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A21</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A22</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A23</div>
                                 <div class="text-sm font-bold">92%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A24</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A25</div>
                                 <div class="text-sm font-bold">99%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A26</div>
                                 <div class="text-sm font-bold">75%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A27</div>
                                 <div class="text-sm font-bold">96%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A28</div>
                                 <div class="text-sm font-bold">82%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A29</div>
                                 <div class="text-sm font-bold">94%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A30</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A31</div>
                                 <div class="text-sm font-bold">91%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A32</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A33</div>
                                 <div class="text-sm font-bold">88%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A34</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A35</div>
                                 <div class="text-sm font-bold">93%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A36</div>
                                 <div class="text-sm font-bold">78%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">A37</div>
                                 <div class="text-sm font-bold">97%</div>
@@ -902,112 +825,113 @@
                 </div>
 
                 <!-- Area B -->
-                <div class="area-container mb-6">
+                <div class="area-container">
                     <div class="area-label area-label-b">
-                        <h2 class="font-bold text-lg text-center">AREA B</h2>
+                        <div class="area-text">AREA</div>
+                        <div class="area-letter">B</div>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B01</div>
                                 <div class="text-sm font-bold">96%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B02</div>
                                 <div class="text-sm font-bold">81%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B03</div>
                                 <div class="text-sm font-bold">93%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B04</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B05</div>
                                 <div class="text-sm font-bold">88%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B06</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B07</div>
                                 <div class="text-sm font-bold">91%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B08</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B09</div>
                                 <div class="text-sm font-bold">94%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B10</div>
                                 <div class="text-sm font-bold">74%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B11</div>
                                 <div class="text-sm font-bold">87%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B12</div>
                                 <div class="text-sm font-bold">79%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B13</div>
                                 <div class="text-sm font-bold">90%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B14</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">B15</div>
                                 <div class="text-sm font-bold">85%</div>
@@ -1018,140 +942,141 @@
                 </div>
 
                 <!-- Area C -->
-                <div class="area-container mb-6">
+                <div class="area-container">
                     <div class="area-label area-label-c">
-                        <h2 class="font-bold text-lg text-center">AREA C</h2>
+                        <div class="area-text">AREA</div>
+                        <div class="area-letter">C</div>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C01</div>
                                 <div class="text-sm font-bold">95%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C02</div>
                                 <div class="text-sm font-bold">92%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C03</div>
                                 <div class="text-sm font-bold">83%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C04</div>
                                 <div class="text-sm font-bold">89%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C05</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C06</div>
                                 <div class="text-sm font-bold">91%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C07</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C08</div>
                                 <div class="text-sm font-bold">86%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C09</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C10</div>
                                 <div class="text-sm font-bold">93%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C11</div>
                                 <div class="text-sm font-bold">77%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C12</div>
                                 <div class="text-sm font-bold">89%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C13</div>
                                 <div class="text-sm font-bold">82%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C14</div>
                                 <div class="text-sm font-bold">90%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C15</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C16</div>
                                 <div class="text-sm font-bold">94%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C17</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C18</div>
                                 <div class="text-sm font-bold">87%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">C19</div>
                                 <div class="text-sm font-bold">75%</div>
@@ -1162,133 +1087,134 @@
                 </div>
 
                 <!-- Area D -->
-                <div class="area-container mb-6">
+                <div class="area-container">
                     <div class="area-label area-label-d">
-                        <h2 class="font-bold text-lg text-center">AREA D</h2>
+                        <div class="area-text">AREA</div>
+                        <div class="area-letter">D</div>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D01</div>
                                 <div class="text-sm font-bold">97%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D02</div>
                                 <div class="text-sm font-bold">84%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D03</div>
                                 <div class="text-sm font-bold">91%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D04</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D05</div>
                                 <div class="text-sm font-bold">89%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D06</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D07</div>
                                 <div class="text-sm font-bold">93%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D08</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D09</div>
                                 <div class="text-sm font-bold">86%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D10</div>
                                 <div class="text-sm font-bold">78%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D11</div>
                                 <div class="text-sm font-bold">92%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D12</div>
                                 <div class="text-sm font-bold">81%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D13</div>
                                 <div class="text-sm font-bold">88%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D14</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D15</div>
                                 <div class="text-sm font-bold">90%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D16</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D17</div>
                                 <div class="text-sm font-bold">85%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">D18</div>
                                 <div class="text-sm font-bold">73%</div>
@@ -1300,69 +1226,70 @@
 
                 <!-- Area E -->
                 <div class="area-container">
-                    <div class="area-label area-label-e">
-                        <h2 class="text-xl font-bold text-center">AREA E</h2>
+                <div class="area-label area-label-e">
+                        <div class="area-text">AREA</div>
+                        <div class="area-letter">E</div>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E01</div>
                                 <div class="text-sm font-bold">94%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E02</div>
                                 <div class="text-sm font-bold">89%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E03</div>
                                 <div class="text-sm font-bold">87%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E04</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E05</div>
                                 <div class="text-sm font-bold">91%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E06</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E07</div>
                                 <div class="text-sm font-bold">89%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E08</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">E09</div>
                                 <div class="text-sm font-bold">93%</div>
@@ -1374,111 +1301,112 @@
 
                 <!-- Area F -->
                 <div class="area-container">
-                    <div class="area-label area-label-f">
-                        <h2 class="text-xl font-bold text-center">AREA F</h2>
+                <div class="area-label area-label-f">
+                        <div class="area-text">AREA</div>
+                        <div class="area-letter">F</div>
                     </div>
                     <div class="area-content">
                         <div class="machine-grid">
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F01</div>
                                 <div class="text-sm font-bold">96%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F02</div>
                                 <div class="text-sm font-bold">82%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F03</div>
                                 <div class="text-sm font-bold">90%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F04</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F05</div>
                                 <div class="text-sm font-bold">88%</div>
                             </div>
                         </div>
                         <div class="machine-card-linestop text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F06</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F07</div>
                                 <div class="text-sm font-bold">92%</div>
                             </div>
                         </div>
                         <div class="machine-card-maintenance text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F08</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F09</div>
                                 <div class="text-sm font-bold">85%</div>
                             </div>
                         </div>
                         <div class="machine-card-trial text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F10</div>
                                 <div class="text-sm font-bold">76%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F11</div>
                                 <div class="text-sm font-bold">89%</div>
                             </div>
                         </div>
                         <div class="machine-card-standby text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F12</div>
                                 <div class="text-sm font-bold">83%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F13</div>
                                 <div class="text-sm font-bold">91%</div>
                             </div>
                         </div>
-                        <div class="machine-card-off text-gray-700 p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                        <div class="machine-card-off text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F14</div>
                                 <div class="text-sm font-bold">0%</div>
                             </div>
                         </div>
                         <div class="machine-card-green text-white p-2 flex justify-center items-center gap-2 rounded-sm cursor-pointer">
-                            <img src="logomesin.png" alt="Logo" class="w-6 h-6">
+                            <img src="logomesin_putih.png" alt="Logo" class="w-6 h-6">
                             <div class="flex-1 text-left">
                                 <div class="text-[10px] font-medium">F15</div>
                                 <div class="text-sm font-bold">87%</div>
@@ -1492,10 +1420,10 @@
             <!-- Panel Informasi Kanan -->
             <div class="col-span-4">
                 <!-- Vertical Wrapper for All Right Panel Components -->
-                <div class="flex flex-col space-y-6 p-4 bg-white rounded-lg max-w-full w-full">
+                <div class="flex flex-col space-y-3 p-2 bg-white rounded-lg max-w-full w-full">
                     <!-- Realtime Linestop -->
                     <div class="p-2">
-                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-2 pb-1 mb-3">
+                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Realtime Linestop
                         </h2>
                         <div class="table-container overflow-x-auto md:overflow-x-visible">
@@ -1525,7 +1453,7 @@
 
                     <!-- Current Shift Count -->
                     <div class="p-2">
-                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-2 pb-1 mb-3">
+                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Current Shift Count
                         </h2>
                         <div class="grid grid-cols-4 gap-2">
@@ -1550,7 +1478,7 @@
 
                     <!-- Realtime Count -->
                     <div class="p-2">
-                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-2 pb-1 mb-3">
+                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Realtime Count
                         </h2>
                         <div class="grid grid-cols-6 gap-2">
@@ -1562,7 +1490,7 @@
                                 <div class="text-xl font-bold">7</div>
                                 <div class="text-xs whitespace-normal break-words">Standby</div>
                             </div>
-                            <div class="count-card count-card-gray text-center p-2.5 text-gray-700 rounded-sm">
+                            <div class="count-card count-card-gray text-center p-2.5 text-white rounded-sm">
                                 <div class="text-xl font-bold">20</div>
                                 <div class="text-xs whitespace-normal break-words">Off</div>
                             </div>
@@ -1582,8 +1510,8 @@
                     </div>
 
                     <!-- Planning Note -->
-                    <div class="p-2">
-                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-2 pb-1 mb-3">
+                    <div class="p-2"> 
+                        <h2 class="text-[17px] font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Planning Note
                         </h2>
                         <div class="space-y-2 text-sm">
@@ -1770,6 +1698,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
