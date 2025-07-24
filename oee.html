@@ -372,8 +372,10 @@
         }
         
         .table-container {
-            max-height: 300px;
-            overflow-y: auto;
+            max-height: 350px;
+            overflow: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
         }
         
         .table-container::-webkit-scrollbar {
@@ -523,186 +525,185 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.18);
         }
         
+        /* Modern Minimalist Linestop Table */
         #linestop-table {
-             table-layout: fixed;
-             width: 100%;
-             border-collapse: collapse;
-             font-size: 9px;
-         }
-         
-         #linestop-table td, #linestop-table th {
-             vertical-align: top;
-             padding: 4px 6px;
-             text-align: left;
-             border: none;
-             overflow: hidden;
-             text-overflow: ellipsis;
-         }
-         
-         /* Kolom No - tetap kecil */
-         #linestop-table th:nth-child(1), #linestop-table td:nth-child(1) { /* No */
-             width: 6%;
-             text-align: center;
-             white-space: nowrap;
-         }
-         
-         /* Kolom Mesin - sedang */
-         #linestop-table th:nth-child(2), #linestop-table td:nth-child(2) { /* Mesin */
-             width: 10%;
-             font-weight: 600;
-             white-space: nowrap;
-         }
-         
-         /* Kolom Part - fleksibel */
-         #linestop-table th:nth-child(3), #linestop-table td:nth-child(3) { /* Part */
-             width: 16%;
-             word-wrap: break-word;
-             white-space: normal;
-         }
-         
-         /* Kolom Problem - paling lebar untuk konten panjang */
-         #linestop-table th:nth-child(4), #linestop-table td:nth-child(4) { /* Problem */
-             width: 22%;
-             word-wrap: break-word;
-             white-space: normal;
-         }
-         
-         /* Kolom PIC - sedang */
-         #linestop-table th:nth-child(5), #linestop-table td:nth-child(5) { /* PIC */
-             width: 12%;
-             word-wrap: break-word;
-             white-space: normal;
-         }
-         
-         /* Kolom Mulai - kompak */
-         #linestop-table th:nth-child(6), #linestop-table td:nth-child(6) { /* Mulai */
-             width: 10%;
-             text-align: center;
-             white-space: nowrap;
-         }
-         
-         /* Kolom Repair - sedang */
-         #linestop-table th:nth-child(7), #linestop-table td:nth-child(7) { /* Repair */
-             width: 14%;
-             word-wrap: break-word;
-             white-space: normal;
-         }
-         
-         /* Kolom Durasi - kompak */
-         #linestop-table th:nth-child(8), #linestop-table td:nth-child(8) { /* Durasi */
-             width: 10%;
-             text-align: center;
-             font-weight: 600;
-             white-space: nowrap;
-         }
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            table-layout: fixed;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
         
-        /* Responsive design */
-         @media (max-width: 768px) {
-             #linestop-table {
-                 font-size: 8px;
-             }
-             
-             #linestop-table td, #linestop-table th {
-                 padding: 3px 4px;
-             }
-         }
-         
-         @media (max-width: 480px) {
-             #linestop-table {
-                 font-size: 7px;
-             }
-             
-             #linestop-table td, #linestop-table th {
-                 padding: 2px 3px;
-             }
-             
-             /* Adjust column widths for very small screens */
-             #linestop-table th:nth-child(1), #linestop-table td:nth-child(1) { /* No */
-                 width: 5%;
-             }
-             
-             #linestop-table th:nth-child(2), #linestop-table td:nth-child(2) { /* Mesin */
-                 width: 8%;
-             }
-             
-             #linestop-table th:nth-child(3), #linestop-table td:nth-child(3) { /* Part */
-                 width: 15%;
-             }
-             
-             #linestop-table th:nth-child(4), #linestop-table td:nth-child(4) { /* Problem */
-                 width: 25%;
-             }
-             
-             #linestop-table th:nth-child(5), #linestop-table td:nth-child(5) { /* PIC */
-                 width: 10%;
-             }
-             
-             #linestop-table th:nth-child(6), #linestop-table td:nth-child(6) { /* Mulai */
-                 width: 9%;
-             }
-             
-             #linestop-table th:nth-child(7), #linestop-table td:nth-child(7) { /* Repair */
-                 width: 16%;
-             }
-             
-             #linestop-table th:nth-child(8), #linestop-table td:nth-child(8) { /* Durasi */
-                 width: 12%;
-             }
-         }
-         
-         /* Table container styles */
-           .table-container {
-               height: auto;
-               overflow: hidden;
-               display: block;
-               width: 100%;
-               max-width: 100%;
-               box-sizing: border-box;
-           }
-           
-           #linestop-table {
-               display: table;
-               visibility: visible;
-               opacity: 1;
-           }
-           
-           #linestop-tbody {
-               display: table-row-group;
-           }
-          
-          /* Tooltip styles */
-          .tooltip {
-              position: relative;
-              cursor: help;
-          }
-         
-         .tooltip:hover::after {
-             content: attr(data-tooltip);
-             position: absolute;
-             bottom: 100%;
-             left: 50%;
-             transform: translateX(-50%);
-             background-color: #333;
-             color: white;
-             padding: 4px 8px;
-             border-radius: 4px;
-             font-size: 10px;
-             white-space: nowrap;
-             z-index: 1000;
-             pointer-events: none;
-         }
-         
-         .tooltip:hover::before {
-             content: '';
-             position: absolute;
-             bottom: 100%;
-             left: 50%;
-             transform: translateX(-50%) translateY(2px);
-             border: 4px solid transparent;
-             border-top-color: #333;
-             z-index: 1000;
-             pointer-events: none;
-         }
+        #linestop-table thead {
+            background: #f1f5f9;
+            border-bottom: 2px solid #cbd5e1;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        #linestop-table th {
+            padding: 6px 4px;
+            text-align: left;
+            vertical-align: top;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            color: #000000;
+            font-size: 11px;
+            border-right: 1px solid #e2e8f0;
+            position: relative;
+            word-wrap: break-word;
+            white-space: normal;
+            line-height: 1.2;
+            overflow-wrap: break-word;
+        }
+        
+        #linestop-table th:last-child {
+            border-right: none;
+        }
+        
+        #linestop-table td {
+            padding: 6px;
+            text-align: left;
+            vertical-align: top;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000000;
+            border-right: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            word-wrap: break-word;
+            white-space: normal;
+            line-height: 1.4;
+            overflow-wrap: break-word;
+            background: white;
+            transition: background-color 0.2s ease;
+        }
+        
+        #linestop-table td:last-child {
+            border-right: none;
+        }
+        
+        #linestop-table tbody tr:hover td {
+            background-color: #f8fafc;
+        }
+        
+        #linestop-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Modern column styling - Consistent font for all */
+        #linestop-table th:nth-child(1), 
+        #linestop-table td:nth-child(1) { /* No */
+            width: 8%;
+            text-align: center;
+        }
+        
+        #linestop-table th:nth-child(2), 
+        #linestop-table td:nth-child(2) { /* Mesin */
+            width: 10%;
+        }
+        
+        #linestop-table th:nth-child(3), 
+        #linestop-table td:nth-child(3) { /* Part */
+            width: 16%;
+        }
+        
+        #linestop-table th:nth-child(4), 
+        #linestop-table td:nth-child(4) { /* Problem */
+            width: 20%;
+        }
+        
+        #linestop-table th:nth-child(5), 
+        #linestop-table td:nth-child(5) { /* PIC */
+            width: 12%;
+        }
+        
+        #linestop-table th:nth-child(6), 
+        #linestop-table td:nth-child(6) { /* Mulai */
+            width: 10%;
+            text-align: center;
+        }
+        
+        #linestop-table th:nth-child(7), 
+        #linestop-table td:nth-child(7) { /* Repair */
+            width: 14%;
+        }
+        
+        #linestop-table th:nth-child(8), 
+        #linestop-table td:nth-child(8) { /* Durasi */
+            width: 10%;
+            text-align: center;
+        }
+        
+        /* Table container modern styling */
+        .table-container {
+            max-height: 400px;
+            overflow-x: auto;
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            position: relative;
+        }
+        
+        /* Custom scrollbar */
+        .table-container::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        .table-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        
+        .table-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            #linestop-table {
+                font-size: 10px;
+            }
+            
+            #linestop-table th,
+            #linestop-table td {
+                padding: 4px 2px;
+                font-size: 10px;
+            }
+            
+            #linestop-table th {
+                line-height: 1.1;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #linestop-table {
+                font-size: 9px;
+            }
+            
+            #linestop-table th,
+            #linestop-table td {
+                padding: 3px 1px;
+                font-size: 9px;
+            }
+            
+            #linestop-table th {
+                line-height: 1.0;
+            }
+        }
      </style>
 </head>
 <body class="bg-gray-50 font-inter">
@@ -1594,24 +1595,24 @@
             <!-- Panel Informasi Kanan -->
             <div class="col-span-3">
                 <!-- Vertical Wrapper for All Right Panel Components -->
-                <div class="flex flex-col space-y-2 p-2 bg-white rounded-lg shadow h-full overflow-y-auto">
+                <div class="flex flex-col space-y-3 p-1.5 bg-white rounded-lg shadow h-full overflow-y-auto">
                     <!-- Realtime Linestop -->
-                    <div class="p-1">
-                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-1">
+                    <div class="p-1.5">
+                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Realtime Linestop
                         </h2>
                         <div class="table-container">
-                            <table id="linestop-table" class="table-fixed w-full">
-                                <thead class="bg-gray-50 sticky top-0">
+                            <table id="linestop-table" class="w-full">
+                                <thead>
                                     <tr>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[8%]">No</th>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[10%]">Mesin</th>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[18%]">Part</th>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[22%]">Problem</th>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[12%]">PIC</th>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[8%]">Mulai</th>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[15%]">Repair</th>
-                                        <th class="text-[13px] px-2 py-2 text-left font-semibold text-gray-700 w-[7%]">Durasi</th>
+                                        <th>No</th>
+                                        <th>Mesin</th>
+                                        <th>Part</th>
+                                        <th>Problem</th>
+                                        <th>PIC</th>
+                                        <th>Mulai</th>
+                                        <th>Repair</th>
+                                        <th>Durasi</th>
                                     </tr>
                                 </thead>
                                 <tbody id="linestop-tbody">
@@ -1626,11 +1627,11 @@
                     </div>
 
                     <!-- Current Shift Count -->
-                    <div class="p-1">
-                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-1">
+                    <div class="p-1.5">
+                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Current Shift Count
                         </h2>
-                        <div class="grid grid-cols-4 gap-1">
+                        <div class="grid grid-cols-4 gap-2">
                             <div class="count-card text-center p-1.5 bg-yellow-100 rounded-[6px]">
                                 <div class="text-lg font-bold text-gray-800">0</div>
                                 <div class="text-[10px] text-gray-600 whitespace-normal break-words">Planned Machine</div>
@@ -1651,11 +1652,11 @@
                     </div>
 
                     <!-- Realtime Count -->
-                    <div class="p-1">
-                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-1">
+                    <div class="p-1.5">
+                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Realtime Count
                         </h2>
-                        <div class="grid grid-cols-6 gap-1">
+                        <div class="grid grid-cols-6 gap-2">
                             <div class="count-card count-card-green text-center p-1.5 text-white rounded-[6px]">
                                 <div class="text-lg font-bold">59</div>
                                 <div class="text-[10px] whitespace-normal break-words">Running Auto</div>
@@ -1684,8 +1685,8 @@
                     </div>
 
                     <!-- Planning Note -->
-                    <div class="p-1"> 
-                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-1">
+                    <div class="p-1.5"> 
+                        <h2 class="text-sm font-semibold text-gray-800 border-b border-gray-300 mt-0 pb-1 mb-2">
                             Planning Note
                         </h2>
                         <div class="space-y-1 text-xs">
@@ -1707,10 +1708,10 @@
     <script id="realtime-update">
         document.addEventListener('DOMContentLoaded', function() {
             function updateMachineStatus() {
-                const machines = document.querySelectorAll('.machine-card');
+                const machines = document.querySelectorAll('[class*="machine-card-"]');
                 machines.forEach(machine => {
-                    const percentage = machine.querySelector('.text-lg');
-                    if (percentage && !machine.classList.contains('status-off') && !machine.classList.contains('status-linestop') && !machine.classList.contains('status-maintenance')) {
+                    const percentage = machine.querySelector('.text-lg, .text-sm');
+                    if (percentage && !machine.classList.contains('machine-card-off') && !machine.classList.contains('machine-card-linestop') && !machine.classList.contains('machine-card-maintenance')) {
                         const currentValue = parseInt(percentage.textContent);
                         const variation = Math.floor(Math.random() * 6) - 3;
                         const newValue = Math.max(70, Math.min(100, currentValue + variation));
@@ -1720,14 +1721,14 @@
             }
 
             function updateCounts() {
-                const runningCount = document.querySelectorAll('.status-running').length;
-                const standbyCount = document.querySelectorAll('.status-standby').length;
-                const offCount = document.querySelectorAll('.status-off').length;
-                const linestopCount = document.querySelectorAll('.status-linestop').length;
-                const maintenanceCount = document.querySelectorAll('.status-maintenance').length;
-                const trialCount = document.querySelectorAll('.status-trial').length;
+                const runningCount = document.querySelectorAll('.machine-card-green').length;
+                const standbyCount = document.querySelectorAll('.machine-card-standby').length;
+                const offCount = document.querySelectorAll('.machine-card-off').length;
+                const linestopCount = document.querySelectorAll('.machine-card-linestop').length;
+                const maintenanceCount = document.querySelectorAll('.machine-card-maintenance').length;
+                const trialCount = document.querySelectorAll('.machine-card-trial').length;
 
-                const countElements = document.querySelectorAll('.count-card .text-2xl');
+                const countElements = document.querySelectorAll('.count-card .text-lg');
                 if (countElements.length >= 6) {
                     countElements[0].textContent = runningCount;
                     countElements[1].textContent = standbyCount;
@@ -1798,15 +1799,15 @@
             // Fungsi untuk membuat baris tabel
             function createTableRow(data) {
                 return `
-                    <tr class="border-b hover:bg-gray-50">
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words">${data.no}</td>
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words font-semibold tooltip" data-tooltip="${data.mesin}">${data.mesin}</td>
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words tooltip" data-tooltip="${data.part}">${data.part}</td>
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words tooltip" data-tooltip="${data.problem}">${data.problem}</td>
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words tooltip" data-tooltip="${data.pic}">${data.pic}</td>
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words">${data.mulai}</td>
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words tooltip" data-tooltip="${data.repair}">${data.repair}</td>
-                        <td class="text-[13px] px-2 py-2 text-left align-top break-words text-red-600 font-semibold">${data.durasi}</td>
+                    <tr>
+                        <td>${data.no}</td>
+                        <td>${data.mesin}</td>
+                        <td>${data.part}</td>
+                        <td>${data.problem}</td>
+                        <td>${data.pic}</td>
+                        <td>${data.mulai}</td>
+                        <td>${data.repair}</td>
+                        <td>${data.durasi}</td>
                     </tr>
                 `;
             }
@@ -1834,7 +1835,7 @@
             }
 
             // Inisialisasi: tampilkan batch pertama
-             displayBatch(currentBatch);
+            displayBatch(currentBatch);
 
             // Set interval untuk berpindah batch setiap 5 detik
             setInterval(nextBatch, 5000);
@@ -1867,11 +1868,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
